@@ -39,11 +39,24 @@ THE SOFTWARE.
 
 void uart_init(void)
 {
-        UBRR0L = 11;     // 115.2 kbps @ 11.0592 MHz clock
+#define BAUD 9600
+#include <util/setbaud.h>
+UBRR0H = UBRRH_VALUE;
+UBRR0L = UBRRL_VALUE;
+#if USE_2X
+  UCSR0A |= (1<<U2X0);
+#endif
+
+UCSR0B = (1<<RXEN0) | (1<<TXEN0);
+
+UCSR0C = (1<<UCSZ01) | (1<<UCSZ00);
+/*
+        UBRR0L = 11;
         UBRR0H = 0;
         UCSR0A = (1<<U2X0);
         UCSR0C = (1<<UCSZ01)|(1<<UCSZ00);
         UCSR0B = (1<<TXEN0)|(1<<RXEN0);
+*/
 }
 
 void cout(char c)

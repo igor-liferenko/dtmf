@@ -2,7 +2,7 @@
 all: main.hex
 
 CC = avr-gcc
-CFLAGS = -Os -Wall -g3 -mmcu=atmega168 -DF_CPU=11059200UL -fpack-struct
+CFLAGS = -Os -Wall -g3 -mmcu=atmega168 -DF_CPU=16000000UL -fpack-struct
 OBJS = dtmf.o goetzel.o uart.o main.o
 
 main.hex: $(OBJS)
