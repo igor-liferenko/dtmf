@@ -48,9 +48,9 @@ int main()
 		// process any new DTMF digits
 		digit = dtmf_digit();
 		if (digit) {
-			print("digit = ");
+			/* print("digit = "); */
 			cout(digit);
-			print("\n");
+			/* print("\n"); */
 		}
 	}
 
