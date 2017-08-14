@@ -42,7 +42,7 @@ int main()
 	char digit;
 
 	uart_init();
-	print("\nAVR DTMF\nCopyright 2015, Paul Stoffregen\n");
+	/* print("\nAVR DTMF\nCopyright 2015, Paul Stoffregen\n"); */
 	dtmf_init();
 	while (1) {
 		// process any new DTMF digits
