@@ -44,6 +44,7 @@ int main()
 	char digit;
 
         DDRD |= 1 << PORTD4;
+        PORTD |= 1 << PORTD4;
 	uart_init();
 	/* print("\nAVR DTMF\nCopyright 2015, Paul Stoffregen\n"); */
 	dtmf_init();
@@ -64,9 +65,9 @@ int main()
                 if (UCSR0A & (1<<RXC0)) {
                   (void) UDR0; /* remove received data from buffer */
                   cli();
-                  PORTD |= 1 << PORTD4; /* led on */
-                  _delay_ms(500);
                   PORTD &= (unsigned char) ~ (unsigned char) (1 << PORTD4); /* led off */
+                  _delay_ms(500);
+                  PORTD |= 1 << PORTD4; /* led on */
                   sei();
                 }
 
