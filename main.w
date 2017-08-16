@@ -1,3 +1,4 @@
+@ @c
 /*
 Efficient AVR DTMF Decoding
 Copyright (c) 2015, Paul Stoffregen
@@ -7,7 +8,8 @@ special one-off project.  More recently, I created a superior implementation
 for 32 bit ARM Cortex-M4 in the Teensy Audio Library.
 
 http://www.pjrc.com/teensy/td_libs_Audio.html
-https://github.com/PaulStoffregen/Audio/blob/master/examples/Analysis/DialTone_Serial/DialTone_Serial.ino
+https://github.com/PaulStoffregen/Audio/blob/master/examples/Analysis/DialTone%
+  _Serial/DialTone_Serial.ino
 
 I highly recommend using the 32 bit version for new projects.  However, this
 old 8 bit code may still be useful for some projects.  If you use this code,
@@ -53,16 +55,18 @@ int main()
 			cout(digit);
 			/* print("\n"); */
 		}
+                @<Send CPC signal to phone if timeout@>;
+	}
+
+}
+
+@ @<Send CPC signal to phone if timeout@>=
                 if (UCSR0A & (1<<RXC0)) {
                   (void) UDR0; /* remove received data from buffer */
                   cli();
                   PORTB |= 1 << PORTB5; /* led on */
                   _delay_ms(500);
-                  PORTB &= ~(1 << PORTB5); /* led off */
+                  PORTB &= (unsigned char) ~ (unsigned char) (1 << PORTB5); /* led off */
                   sei();
                 }
-	}
-
-}
-
 
