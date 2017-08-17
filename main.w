@@ -42,9 +42,10 @@ THE SOFTWARE.
 int main()
 {
 	char digit;
-
+#if 1==0
         DDRD |= 1 << PORTD4;
         PORTD |= 1 << PORTD4;
+#endif
 	uart_init();
 	/* print("\nAVR DTMF\nCopyright 2015, Paul Stoffregen\n"); */
 	dtmf_init();
@@ -64,10 +65,12 @@ int main()
 @ @<Send CPC signal to phone if timeout@>=
                 if (UCSR0A & (1<<RXC0)) {
                   (void) UDR0; /* remove received data from buffer */
+#if 1==0
                   cli();
                   PORTD &= (unsigned char) ~ (unsigned char) (1 << PORTD4); /* led off */
                   _delay_ms(500);
                   PORTD |= 1 << PORTD4; /* led on */
                   sei();
+#endif
                 }
 
