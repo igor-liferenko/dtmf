@@ -44,8 +44,8 @@ int flag=0;
 		while(ADCSRA & (1<<ADSC));
 
 		sample = ADCH;
-_delay_ms(50); /* debounce */
 		if (sample < 0x80) {
+_delay_ms(50); /* debounce */
 if (!flag) {
     while(!(UCSR0A & (1<<UDRE0))); /* while the transmit buffer is not empty loop */
     UDR0 = sample; /* when the buffer is empty write data to the transmitted */
