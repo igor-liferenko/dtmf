@@ -1,0 +1,1 @@
+SUBSYSTEM=="tty", ATTRS{serial}=="A9KZRTXD", SYMLINK+="tel"
