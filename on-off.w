@@ -17,7 +17,7 @@
 //#include <inttypes.h>
 #include <avr/io.h>
 //#include <avr/interrupt.h>
-//#include <avr/sleep.h>
+#include <util/delay.h>
 
 int main (void)
 {
@@ -42,10 +42,9 @@ int flag=0;
 
 	while(1) {
 		while(ADCSRA & (1<<ADSC));
-		PORTB &= (unsigned char) ~ (unsigned char) (1<<PB2);         /* YELLOW off  */
 
 		sample = ADCH;
-
+_delay_ms(50); /* debounce */
 		if (sample < 0x80) {
 if (!flag) {
     while(!(UCSR0A & (1<<UDRE0))); /* while the transmit buffer is not empty loop */
@@ -61,6 +60,5 @@ flag = 0;
 			PORTB &= (unsigned char) ~ (unsigned char) (1<<PB3); /* RED off */
 		}
 		ADCSRA |= (1<<ADSC); /* start conversion */
-		PORTB |= 1 << PB2;          /* YELLOW on */
 	}
 }
