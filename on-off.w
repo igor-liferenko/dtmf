@@ -34,10 +34,10 @@ int main (void)
 		sample = ADCH;
 
 		if (sample < 0x80) {
-                  _delay_ms(50); /* debounce */
+                  _delay_ms(100); /* debounce */
                   if (!flag) {
-                    while(!(UCSR0A & (1<<UDRE0))) ; /* while the transmit buffer is not empty loop */
-                    UDR0 = sample; /* when the buffer is empty write data to the transmitted */
+                    while(!(UCSR0A & (1<<UDRE0))) ;
+                    UDR0 = sample;
                   }
 		  PORTB |=   1<<PB1;  /* RED on  */
 		  PORTB &= (unsigned char) ~ (unsigned char) (1<<PB3); /* GREEN off */
