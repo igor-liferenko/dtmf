@@ -18,8 +18,6 @@ int main (void)
                                                        (16000000/128 = 125000) */
         ADCSRA |= 1<<ADSC; /* start conversion */
 
-        int flag=0;
-
   #include <util/setbaud.h>
   UBRR0H = UBRRH_VALUE;
   UBRR0L = UBRRL_VALUE;
@@ -29,22 +27,21 @@ int main (void)
   UCSR0B |= 1 << TXEN0;
   UCSR0C |= 1 << UCSZ01 | 1 << UCSZ00;
 
+        DDRD |= 1 << PORTD4;
+
 	while(1) {
 		while(ADCSRA & (1<<ADSC));
 		sample = ADCH;
 
 		if (sample < 0x80) {
-                  _delay_ms(100); /* debounce */
-                  if (!flag) {
-                    while(!(UCSR0A & (1<<UDRE0))) ;
-                    UDR0 = sample;
-                  }
+                  _delay_ms(100); /* debounce */ /* FIXME: check digit and RX each millisecond when
+you move this to MT8870-program */
+                  PORTD |= 1<<PD4;
 		  PORTB |=   1<<PB1;  /* RED on  */
 		  PORTB &= (unsigned char) ~ (unsigned char) (1<<PB3); /* GREEN off */
-                  flag=1;
 		}
 		else {
-                        flag = 0;
+                        PORTD &= (unsigned char) ~ (unsigned char) (1<<PD4);
 			PORTB |=   1<<PB3;  /* GREEN on  */
 			PORTB &= (unsigned char) ~ (unsigned char) (1<<PB1); /* RED off */
 		}

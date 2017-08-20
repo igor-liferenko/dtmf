@@ -47,16 +47,16 @@ int main()
         PORTD |= 1 << PORTD4;
 #endif
 	uart_init();
-	/* print("\nAVR DTMF\nCopyright 2015, Paul Stoffregen\n"); */
 	dtmf_init();
+        int flag=0;
 	while (1) {
-		// process any new DTMF digits
 		digit = dtmf_digit();
-		if (digit) {
-			/* print("digit = "); */
-			cout(digit);
-			/* print("\n"); */
-		}
+		if (digit) cout(digit);
+                if (PIND & 1<<PD3) {
+                  if (!flag) cout('^');
+                  flag = 1;
+                }
+                else flag = 0;
                 @<Send CPC signal to phone if timeout@>;
 	}
 
