@@ -12,7 +12,7 @@
   conversion.
 */
 
-/* TODO: after you receive dtmf decoder, do this via interrupt like dtmf is done now */
+/* TODO: after you receive dtmf decoder, do this via interrupts (+ see file "NEW") */
 
 //#include <inttypes.h>
 #include <avr/io.h>

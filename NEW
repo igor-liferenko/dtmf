@@ -1,6 +1,6 @@
 SUBSYSTEM=="tty", ATTRS{serial}=="A9KZRTXD", SYMLINK+="tel"
 http://www.infidigm.net/projects/dtmf2/
-
+see on-off.w
 
 /*
  * ATmega16_DFMF_interfacing.c
