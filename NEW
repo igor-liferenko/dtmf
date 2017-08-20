@@ -1,1 +1,43 @@
 SUBSYSTEM=="tty", ATTRS{serial}=="A9KZRTXD", SYMLINK+="tel"
+http://www.infidigm.net/projects/dtmf2/
+
+
+/*
+ * ATmega16_DFMF_interfacing.c
+ *
+ * http://www.electronicwings.com
+ */
+
+
+#define F_CPU 16000000UL
+#include <avr/io.h>
+#include <avr/delay.h>
+#include <avr/interrupt.h>
+
+volatile int keydetect = 0;
+
+ISR(INT0_vect)
+{
+        keydetect = true;
+        _delay_ms(50);         /* Software debouncing control delay */
+}
+
+int main(void)
+{
+        DDRC = 0x00;            /* PORTC define as a input port */
+        GICR = 1<<INT0;     /* Enable INT0*/
+        MCUCR = 1<<ISC01 | 1<<ISC00;     /* Trigger INT0 on rising edge */
+
+        sei();              /* Enable Global Interrupt */
+
+    while(1)
+    {
+                if (keydetect)
+                {
+                        keydetect = false;
+                        switch (PINC & 0x0F)
+                        {
+                                case (0x01):
+                                LCD_String_xy(1, 0, "1");
+                                break;
+...
