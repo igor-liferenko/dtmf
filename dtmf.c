@@ -82,7 +82,7 @@ void dtmf_init(void)
 	TCCR1B = 0;				// make sure timer1 is stopped
 	TIFR1 = (1<<ICF1)|(1<<OCF1B)|(1<<OCF1A)|(1<<TOV1); // clear any pending interrupt
 	//DIDR0 = 128;
-	ADMUX = (1<<REFS0)|(1<<ADLAR)|7;	// 8 bit result, Vcc ref, channel 7
+	ADMUX = (1<<REFS0)|(1<<ADLAR)|5;	// 8 bit result, Vcc ref, channel 7
 	ADCSRB = 0x07;				// trigger on timer1 icp interrupt flag
 	ADCSRA = (1<<ADIF)|6;			// clear any previous interrupt
 	ADCSRA = (1<<ADEN)|(1<<ADATE)|(1<<ADIE)|6; // enable adc, auto trigger, enable interrupt
