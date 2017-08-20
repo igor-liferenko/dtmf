@@ -29,7 +29,7 @@ int main (void)
         ADCSRA |= (1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0); /* prescaler of 128
                                                        (16000000/128 = 125000) */
         ADCSRA |= 1<<ADSC; /* start conversion */
-
+int flag=0;
   #include <util/setbaud.h>
   UBRR0H = UBRRH_VALUE;
   UBRR0L = UBRRL_VALUE;
@@ -46,14 +46,17 @@ int main (void)
 
 		sample = ADCH;
 
+		if (sample < 0x80) {
+if (!flag) {
     while(!(UCSR0A & (1<<UDRE0))); /* while the transmit buffer is not empty loop */
     UDR0 = sample; /* when the buffer is empty write data to the transmitted */
-
-		if (sample < 0x80) {
+}
 			PORTB |=   1<<PB3;  /* RED on  */
 			PORTB &= (unsigned char) ~ (unsigned char) (1<<PB1); /* GREEN off */
+flag=1;
 		}
 		else {
+flag = 0;
 			PORTB |=   1<<PB1;  /* GREEN on  */
 			PORTB &= (unsigned char) ~ (unsigned char) (1<<PB3); /* RED off */
 		}

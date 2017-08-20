@@ -16,3 +16,9 @@ goetzel.o: goetzel.S
 
 clean:
 	rm -f *.lst *.hex *.o *.obj *.elf *.bin
+
+on-off:
+	avr-gcc -mmcu=$(MCU) -g -Os -c on-off.c
+	avr-gcc -mmcu=$(MCU) -g -o on-off.elf on-off.o
+	avr-objcopy -O ihex on-off.elf on-off.hex
+	avrdude -c usbasp -p $(MCU) -U flash:w:on-off.hex -qq
