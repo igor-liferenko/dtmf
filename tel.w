@@ -1,5 +1,9 @@
+@ This program is for MT8870
+
+@c
+
 http://www.infidigm.net/projects/dtmf2/
-see on-off.w
+integrate here hook.w (like it is integrated in main.w, but directly - to use just one AVR)
 
 /*
  * ATmega16_DFMF_interfacing.c
