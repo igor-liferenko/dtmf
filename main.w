@@ -50,7 +50,7 @@ int main()
 		digit = dtmf_digit();
 		if (digit) cout(digit);
                 if (PIND & 1 << PD3) {
-                  if (flag == 0) cout('@');
+                  if (flag == 0) cout('@@');
                   flag = 1;
                 }
                 else flag = 0;
