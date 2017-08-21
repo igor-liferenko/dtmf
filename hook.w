@@ -16,7 +16,7 @@ int main (void)
                                                        (16000000/128 = 125000) */
         ADCSRA |= 1<<ADSC; /* start conversion */
 
-        DDRD |= 1 << PORTD4;
+        DDRD |= 1 << PD4;
 
 	while(1) {
 		while(ADCSRA & (1<<ADSC));
