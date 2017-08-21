@@ -42,18 +42,15 @@ THE SOFTWARE.
 int main()
 {
 	char digit;
-#if 1==0
-        DDRD |= 1 << PORTD4;
-        PORTD |= 1 << PORTD4;
-#endif
+        DDRD |= 1 << PD4;
 	uart_init();
 	dtmf_init();
-        int flag=0;
+        int flag = 0;
 	while (1) {
 		digit = dtmf_digit();
 		if (digit) cout(digit);
-                if (PIND & 1<<PD3) {
-                  if (!flag) cout('^');
+                if (PIND & 1 << PD3) {
+                  if (flag == 0) cout('^');
                   flag = 1;
                 }
                 else flag = 0;
@@ -65,12 +62,10 @@ int main()
 @ @<Send CPC signal to phone if timeout@>=
                 if (UCSR0A & (1<<RXC0)) {
                   (void) UDR0; /* remove received data from buffer */
-#if 1==0
                   cli();
-                  PORTD &= (unsigned char) ~ (unsigned char) (1 << PORTD4); /* led off */
-                  _delay_ms(500);
-                  PORTD |= 1 << PORTD4; /* led on */
+                  PORTD |= 1 << PD4;
+		  _delay_ms(500);
+                  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD4);
                   sei();
-#endif
                 }
 
