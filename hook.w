@@ -1,11 +1,10 @@
 @ @d F_CPU 16000000UL
-@d BAUD 9600
 
 @c
-/* TODO: after you receive dtmf decoder, merge this with program for that (see file "NEW") */
+/* TODO: after you receive dtmf decoder, merge this with program for that (see file "tel.w"
+   in this directory) */
 
 #include <avr/io.h>
-#include <util/delay.h>
 
 int main (void)
 {
@@ -23,7 +22,6 @@ int main (void)
 	while(1) {
 		while(ADCSRA & (1<<ADSC));
 		sample = ADCH;
-
 		if (sample < 0x80) {
                   PORTD |= 1<<PD4; /* off-hook */
 		  PORTB |= 1<<PB1;  /* GREEN on */
