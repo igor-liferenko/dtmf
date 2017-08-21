@@ -1,5 +1,6 @@
-main.elf
-main.hex
+*.elf
+*.hex
 main.c
+hook.c
 *.o
 relay.eps
