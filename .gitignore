@@ -2,3 +2,4 @@ main.elf
 main.hex
 main.c
 *.o
+relay.eps
