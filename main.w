@@ -49,25 +49,45 @@ int main()
 	uart_init();
 	dtmf_init();
         int flag = 0;
-        int disconnect = 0;
 	while (1) {
 		digit = dtmf_digit();
 		if (digit) cout(digit);
-                if (PIND & 1 << PD3) {
-                  if (flag == 0 && disconnect == 0) cout('@@');
-                  flag = 1;
-                }
-                else flag = 0;
-                disconnect = 0;
+                @<Indicate hook state change to the PC@>;
                 @<Send disconnect signal to phone if timeout@>;
 	}
 
 }
 
-@ Just poweroff/poweron base station via a relay - this will effectively switch off the phone.
+@ When the phone was off-hook and base station was reset - it is OK because it is the same
+condition is in the line when base station is switched off and when the phose is off-hook.
+The effect is as if the phone just goes on-hook.
+I.e., the ADC value was low when phone was off-hook. Then came disconnect signal and the
+ADC value stayed the same. Then power was restored on base station and the ADC signal
+became high, and at the same time the phone was switched off (so that base station and
+phone are now in default state).
 
-Here is a caveat: we must not count this disconnect of base station as off-hook event.
-For this we use |disconnect| variable.
+But if the phone was on-hook and base station was reset - then the following happens:
+ADC becomes low as if the phone was off-hook. So, corresponding symbol is send to PC
+as if the phone was off-hook. The program on PC reacts on this, and starts the timeout alarm.
+Meanwhile, power on base station is restored and it goes to on-hook state. After a while
+timeout signal comes and base station is reset again - and everything repeats endlessly.
+
+This second case may happen when we reflash the AVR,
+because when it is reflashed PD4 (to which the relay is connected) is disabled for a short time,
+which resets the base station. So, to avoid cases like this we need to disable alarm if phone is
+on-hook. We will use `\.{\%}' character for this.
+
+@<Indicate hook state change to the PC@>=
+                if (PIND & 1 << PD3) {
+                  if (flag == 0) cout('@@');
+                  flag = 1;
+                }
+                else {
+                  if (flag == 1) cout('%');
+                  flag = 0;
+                }
+
+@ Just poweroff/poweron base station via a relay - this will effectively switch off the phone.
 
 @<Send disconnect signal to phone if timeout@>=
                 if (UCSR0A & (1<<RXC0)) {
@@ -78,7 +98,5 @@ For this we use |disconnect| variable.
 		  _delay_ms(500);
                   PORTD |= 1 << PD4;
                   PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
-                  disconnect = 1;
                   sei();
                 }
-
