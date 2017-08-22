@@ -1,5 +1,4 @@
 @ @d F_CPU 16000000UL
-@d BAUD 9600
 
 @c
 /* TODO: after you receive dtmf decoder, see file "tel.w" in this directory */
@@ -19,21 +18,9 @@ int main (void)
 
         DDRD |= 1 << PD4;
 
-  #include <util/setbaud.h>
-  UBRR0H = UBRRH_VALUE;
-  UBRR0L = UBRRL_VALUE;
-  #if USE_2X
-    UCSR0A |= (1<<U2X0);
-  #endif
-  UCSR0B |= 1 << TXEN0;
-  UCSR0C |= 1 << UCSZ01 | 1 << UCSZ00;
-
-
 	while(1) {
 		while(ADCSRA & (1<<ADSC));
 		sample = ADCH;
-    while(!(UCSR0A & (1<<UDRE0))); /* while the transmit buffer is not empty loop */
-    UDR0 = sample; /* when the buffer is empty write data to the transmitted */
 		if (sample < 150) {
                   PORTD |= 1<<PD4; /* off-hook */
 		  PORTB |= 1<<PB1;  /* GREEN on */
