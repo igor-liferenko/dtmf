@@ -34,7 +34,7 @@ int main (void)
 		sample = ADCH;
     while(!(UCSR0A & (1<<UDRE0))); /* while the transmit buffer is not empty loop */
     UDR0 = sample; /* when the buffer is empty write data to the transmitted */
-		if (sample < 0x80) {
+		if (sample < 150) {
                   PORTD |= 1<<PD4; /* off-hook */
 		  PORTB |= 1<<PB1;  /* GREEN on */
 		  PORTB &= (unsigned char) ~ (unsigned char) (1<<PB3); /* RED off */

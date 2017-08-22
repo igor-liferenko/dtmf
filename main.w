@@ -49,20 +49,27 @@ int main()
 	uart_init();
 	dtmf_init();
         int flag = 0;
+        int disconnect = 0;
 	while (1) {
 		digit = dtmf_digit();
 		if (digit) cout(digit);
                 if (PIND & 1 << PD3) {
-                  if (flag == 0) cout('@@');
+                  if (flag == 0 && disconnect == 0) cout('@@');
                   flag = 1;
                 }
                 else flag = 0;
-                @<Send CPC signal to phone if timeout@>;
+                disconnect = 0;
+                @<Send disconnect signal to phone if timeout@>;
 	}
 
 }
 
-@ @<Send CPC signal to phone if timeout@>=
+@ Just poweroff/poweron base station via a relay - this will effectively switch off the phone.
+
+Here is a caveat: we must not count this disconnect of base station as off-hook event.
+For this we use |disconnect| variable.
+
+@<Send disconnect signal to phone if timeout@>=
                 if (UCSR0A & (1<<RXC0)) {
                   (void) UDR0; /* remove received data from buffer */
                   cli();
@@ -71,6 +78,7 @@ int main()
 		  _delay_ms(500);
                   PORTD |= 1 << PD4;
                   PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
+                  disconnect = 1;
                   sei();
                 }
 
