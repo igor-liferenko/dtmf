@@ -1,15 +1,13 @@
-@ @c
-/*
-Efficient AVR DTMF Decoding
+@ Efficient AVR DTMF Decoding
 Copyright (c) 2015, Paul Stoffregen
 
 I originally developed this 8 bit AVR-based DTMF decoding code in 2009 for a
 special one-off project.  More recently, I created a superior implementation
 for 32 bit ARM Cortex-M4 in the Teensy Audio Library.
 
-http://www.pjrc.com/teensy/td_libs_Audio.html
-https://github.com/PaulStoffregen/Audio/blob/master/examples/Analysis/DialTone%
-  _Serial/DialTone_Serial.ino
+{\tt\catcode`_11 http://www.pjrc.com/teensy/td_libs_Audio.html} \par
+{\tt\catcode`_11 https://github.com/PaulStoffregen/Audio/blob/master/examples/Analysis/DialTone%
+  _Serial/DialTone_Serial.ino}
 
 I highly recommend using the 32 bit version for new projects.  However, this
 old 8 bit code may still be useful for some projects.  If you use this code,
@@ -33,11 +31,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-*/
 
-
+@c
 #include "main.h"
-
 
 int main()
 {
