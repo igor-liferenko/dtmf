@@ -43,6 +43,7 @@ int main()
 {
 	char digit;
         DDRD |= 1 << PD4;
+	PORTD |= 1 << PD4;
 	DDRB |= 1 << PB5;
 
 	uart_init();
@@ -65,11 +66,10 @@ int main()
                 if (UCSR0A & (1<<RXC0)) {
                   (void) UDR0; /* remove received data from buffer */
                   cli();
-                  PORTD |= 1 << PD4;
-                  PORTB |= 1 << PB5;
-
-		  _delay_ms(500);
                   PORTD &= (unsigned char) ~ (unsigned char) (1 << PD4);
+                  PORTB |= 1 << PB5;
+		  _delay_ms(500);
+                  PORTD |= 1 << PD4;
                   PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
                   sei();
                 }
