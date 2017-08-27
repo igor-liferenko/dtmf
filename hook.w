@@ -1,7 +1,7 @@
 @ @d F_CPU 16000000UL
 
 @c
-/* TODO: after you receive dtmf decoder, see file "tel.w" in this directory */
+/* TODO: after you receive dtmf decoder, see avrtel.w */
 
 #include <avr/io.h>
 
