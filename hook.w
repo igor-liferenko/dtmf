@@ -22,8 +22,7 @@ int main (void)
 		while(ADCSRA & (1<<ADSC));
 		sample = ADCH;
 		if (sample < 150) {
-/* TODO: in the AVR world, the value of less then 0.2V is read as a LOW and the value of greater then 0.6V as a HIGH
-*/
+/* TODO: use another channel on optical relay to do the same as button (with pullup) on main arduino, and something to switch it on-off (and then invert PD3 in main.w), and then this arduino may be removed */
                   PORTD |= 1<<PD4; /* off-hook */
 		  PORTB |= 1<<PB1;  /* GREEN on */
 		  PORTB &= (unsigned char) ~ (unsigned char) (1<<PB3); /* RED off */
