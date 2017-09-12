@@ -22,8 +22,12 @@ int main (void)
 		while(ADCSRA & (1<<ADSC));
 		sample = ADCH;
 		if (sample < 150) {
-/* TODO: use another channel on optical relay to behave the same as button (with pullup) on PD3 in
-   main.w, and pick proper resistor to switch it on/off, and then this file may be removed */
+/* TODO: use another channel on optical relay to behave the same as button (with pullup - see below) on PD3 in
+   main.w, and pick proper resistor to switch it on/off, and then this file may be removed
+
+Если PORTxy=1 то вывод в режиме PullUp с подтяжкой резистором в 100к до питания.
+При DDRxy=0 и PORTxy=1 замыкается ключ подтяжки и к линии подключается резистор в 100кОм, что моментально приводит неподключенную никуда линию в состояние лог1. Цель подтяжки очевидна — недопустить хаотичного изменения состояния на входе под действием наводок. Но если на входе появится логический ноль (замыкание линии на землю кнопкой или другим микроконтроллером/микросхемой), то слабый 100кОмный резистор не сможет удерживать напряжение на линии на уровне лог1 и на входе будет нуль. */
+
                   PORTD |= 1<<PD4; /* off-hook */
 		  PORTB |= 1<<PB1;  /* GREEN on */
 		  PORTB &= (unsigned char) ~ (unsigned char) (1<<PB3); /* RED off */
