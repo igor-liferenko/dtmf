@@ -39,7 +39,7 @@ THE SOFTWARE.
 
 void uart_init(void)
 {
-#define BAUD 9600
+#define BAUD 57600
 #include <util/setbaud.h>
 UBRR0H = UBRRH_VALUE;
 UBRR0L = UBRRL_VALUE;
