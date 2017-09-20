@@ -80,12 +80,14 @@ on-hook. We will use `\.{\%}' character for this.
 
 @<Indicate hook state change to the PC@>=
                 if (PIND & 1 << PD3) {
-                  if (flag == 0) cout('@@');
-                  flag = 1;
-                }
-                else {
                   if (flag == 1) cout('%');
                   flag = 0;
+		  PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
+                }
+                else {
+                  if (flag == 0) cout('@@');
+                  flag = 1;
+		  PORTB |= 1 << PB5;
                 }
 
 @ Just poweroff/poweron base station via a relay - this will effectively switch off the phone.
@@ -95,9 +97,7 @@ on-hook. We will use `\.{\%}' character for this.
                   (void) UDR0; /* remove received data from buffer */
                   cli();
                   PORTD |= 1 << PD4;
-                  PORTB |= 1 << PB5;
 		  _delay_ms(500);
                   PORTD &= (unsigned char) ~ (unsigned char) (1 << PD4);
-                  PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
                   sei();
                 }
