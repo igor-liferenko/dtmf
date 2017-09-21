@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="381.15692"
-     inkscape:cy="351.28313"
+     inkscape:cx="383.15692"
+     inkscape:cy="431.28313"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -48,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -183,17 +183,6 @@
          y="106.97137"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
          id="tspan3812">5Fu15 works (you may try 0.1 uF)</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="42.548153"
-       y="20.792295"
-       id="text47"><tspan
-         sodipodi:role="line"
-         id="tspan45"
-         x="42.548153"
-         y="20.792295"
-         style="font-size:3.52777767px;stroke-width:0.26458332">arduino nano (detect on-off hook - hook.w)</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.28676456px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 61.308379,91.56156 -5.289395,49.74755"
