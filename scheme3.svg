@@ -10,8 +10,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="212.04381mm"
-   height="159.83476mm"
-   viewBox="0 0 212.04381 159.83476"
+   height="143.42395mm"
+   viewBox="0 0 212.04381 143.42395"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.1 r15371"
@@ -27,7 +27,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1"
      inkscape:cx="383.15692"
-     inkscape:cy="431.28313"
+     inkscape:cy="351.28314"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -48,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -56,7 +56,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(26.131649,-18.112011)">
+     transform="translate(26.131649,-34.522819)">
     <path
        style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 112.78774,127.55112 -0.26727,27.26149"
@@ -110,25 +110,14 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="37.952271"
-       y="78.640793"
+       x="82.931435"
+       y="81.815796"
        id="text3778"><tspan
          sodipodi:role="line"
          id="tspan3776"
-         x="37.952271"
-         y="78.640793"
+         x="82.931435"
+         y="81.815796"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332">Arduino nano (168 and 328p work)</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="89.802567"
-       y="90.133385"
-       id="text3786"><tspan
-         sodipodi:role="line"
-         id="tspan3784"
-         x="89.802567"
-         y="90.133385"
-         style="stroke-width:0.26458332">A7</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
@@ -274,20 +263,9 @@
          x="68.913818"
          y="65.725639"
          style="font-size:2.11666656px;stroke-width:0.26458332">optocoupler</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="67.504868"
-       y="89.286812"
-       id="text71-1"><tspan
-         sodipodi:role="line"
-         id="tspan69-2"
-         x="67.504868"
-         y="89.286812"
-         style="font-size:4.23333311px;stroke-width:0.26458332">D4</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.52734685px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 69.810889,71.144286 70.700355,86.29841"
+       d="m 70.869222,69.821369 0.889466,15.154124"
        id="path216"
        inkscape:connector-curvature="0" />
     <path
@@ -322,5 +300,27 @@
        d="M 75.46835,98.042611 74.6746,126.61761"
        id="path73"
        inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333311px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="81.818352"
+       y="92.750938"
+       id="text61"><tspan
+         sodipodi:role="line"
+         id="tspan59"
+         x="81.818352"
+         y="92.750938"
+         style="font-size:4.23333311px;stroke-width:0.26458332">A5</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333311px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="68.58918"
+       y="89.575935"
+       id="text65"><tspan
+         sodipodi:role="line"
+         id="tspan63"
+         x="68.58918"
+         y="89.575935"
+         style="font-size:4.23333311px;stroke-width:0.26458332">D?</tspan></text>
   </g>
 </svg>
