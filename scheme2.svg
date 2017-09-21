@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="200.35037mm"
-   height="102.52232mm"
-   viewBox="0 0 200.35037 102.52232"
+   width="212.04381mm"
+   height="159.83476mm"
+   viewBox="0 0 212.04381 159.83476"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.1 r15371"
@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2"
-     inkscape:cx="370.50571"
-     inkscape:cy="211.37454"
+     inkscape:zoom="1"
+     inkscape:cx="404.29548"
+     inkscape:cy="310.23201"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -48,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -56,7 +56,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-7.0013076,-75.424452)">
+     transform="translate(26.131649,-18.112011)">
     <path
        style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 112.78774,127.55112 -0.26727,27.26149"
@@ -118,17 +118,6 @@
          x="37.952271"
          y="78.640793"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332">Arduino nano (168 and 328p work)</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="89.802567"
-       y="90.133385"
-       id="text3786"><tspan
-         sodipodi:role="line"
-         id="tspan3784"
-         x="89.802567"
-         y="90.133385"
-         style="stroke-width:0.26458332">A7</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
@@ -365,17 +354,6 @@
          x="76.606705"
          y="96.23951"
          style="font-size:4.23333311px;stroke-width:0.26458332">GND</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="65.917366"
-       y="96.430565"
-       id="text71-1"><tspan
-         sodipodi:role="line"
-         id="tspan69-2"
-         x="65.917366"
-         y="96.430565"
-         style="font-size:4.23333311px;stroke-width:0.26458332">D4</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.39114776px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 66.371306,97.804968 0.889466,8.337192"
@@ -408,5 +386,27 @@
          x="84.790565"
          y="128.31442"
          style="font-size:2.11666656px;stroke-width:0.26458332">1.26KOhm</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333311px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="64.620438"
+       y="96.984283"
+       id="text75"><tspan
+         sodipodi:role="line"
+         id="tspan73"
+         x="64.620438"
+         y="96.984283"
+         style="font-size:4.23333311px;stroke-width:0.26458332">D?</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333311px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="88.962105"
+       y="95.132195"
+       id="text79"><tspan
+         sodipodi:role="line"
+         id="tspan77"
+         x="88.962105"
+         y="95.132195"
+         style="font-size:4.23333311px;stroke-width:0.26458332">A5</tspan></text>
   </g>
 </svg>
