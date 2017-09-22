@@ -1,11 +1,10 @@
-@ This program is for MT8870
+@ This program is a sketch for MT8870
 
 see http://arduinobasics.blogspot.ru/2015/08/mt8870-dtmf-dual-tone-multi-frequency.html
 
 @c
 
 http://www.infidigm.net/projects/dtmf2/
-integrate here hook.w (like it is integrated in main.w, but directly - to use just one AVR)
 
 /*
  * ATmega16_DFMF_interfacing.c
