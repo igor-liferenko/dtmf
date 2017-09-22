@@ -9,12 +9,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="200.35037mm"
+   width="257.41345mm"
    height="102.52232mm"
-   viewBox="0 0 200.35037 102.52232"
+   viewBox="0 0 257.41345 102.52232"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.2pre0 (973e216, 2017-07-25)"
+   inkscape:version="0.92.1 r15371"
    sodipodi:docname="scheme.svg">
   <defs
      id="defs2" />
@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="178.91087"
+     inkscape:cx="844.79861"
      inkscape:cy="110.51929"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -48,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -143,17 +143,6 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="89.802567"
-       y="90.133385"
-       id="text3786"><tspan
-         sodipodi:role="line"
-         id="tspan3784"
-         x="89.802567"
-         y="90.133385"
-         style="stroke-width:0.26458332">A7</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        x="5.8799291"
        y="125.68023"
        id="text3790"><tspan
@@ -205,5 +194,16 @@
          y="106.97137"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333311px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
          id="tspan3812">5Fu15 works (you may try 0.1 uF)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333311px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="88.518509"
+       y="88.678757"
+       id="text37"><tspan
+         sodipodi:role="line"
+         x="88.518509"
+         y="88.678757"
+         style="font-size:4.23333311px;stroke-width:0.26458332"
+         id="tspan39">A5 (A7 also works, but arduino uno and duemilanove do not bring it to a pin)</tspan></text>
   </g>
 </svg>
