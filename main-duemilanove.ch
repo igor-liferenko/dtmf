@@ -1,3 +1,5 @@
+On arduino duemilanove PD4 stopped working for some reason.
+
 @x
   DDRD |= 1 << PD4;
 @y
