@@ -35,26 +35,23 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-
 #include "main.h"
-
 
 int main()
 {
-	char digit;
-        DDRD |= 1 << PD4;
-	DDRB |= 1 << PB5;
+  char digit;
+  DDRD |= 1 << PD4;
+  DDRB |= 1 << PB5;
 
-	uart_init();
-	dtmf_init();
-        int flag = 0;
-	while (1) {
-		digit = dtmf_digit();
-		if (digit) cout(digit);
-                @<Indicate hook state change to the PC@>;
-                @<Send disconnect signal to phone if timeout@>;
-	}
-
+  uart_init();
+  dtmf_init();
+  int flag = 0;
+  while (1) {
+    digit = dtmf_digit();
+    if (digit) cout(digit);
+    @<Indicate hook state change to the PC@>;
+    @<Send disconnect signal to phone if timeout@>;
+  }
 }
 
 @ For off-hook indication we will send `\.{@@}' character to PC. But it is not enough.
@@ -79,25 +76,25 @@ which resets the base station. So, to avoid cases like this we need to disable a
 on-hook. We will use `\.{\%}' character for this.
 
 @<Indicate hook state change to the PC@>=
-                if (PIND & 1 << PD3) {
-                  if (flag == 1) cout('%');
-                  flag = 0;
-		  PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
-                }
-                else {
-                  if (flag == 0) cout('@@');
-                  flag = 1;
-		  PORTB |= 1 << PB5;
-                }
+if (PIND & 1 << PD3) {
+  if (flag == 1) cout('%');
+  flag = 0;
+  PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
+}
+else {
+  if (flag == 0) cout('@@');
+  flag = 1;
+  PORTB |= 1 << PB5;
+}
 
 @ Just poweroff/poweron base station via a relay - this will effectively switch off the phone.
 
 @<Send disconnect signal to phone if timeout@>=
-                if (UCSR0A & (1<<RXC0)) {
-                  (void) UDR0; /* remove received data from buffer */
-                  cli();
-                  PORTD |= 1 << PD4;
-		  _delay_ms(500);
-                  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD4);
-                  sei();
-                }
+if (UCSR0A & (1<<RXC0)) {
+  (void) UDR0; /* remove received data from buffer */
+  cli();
+  PORTD |= 1 << PD4;
+  _delay_ms(500);
+  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD4);
+  sei();
+}
