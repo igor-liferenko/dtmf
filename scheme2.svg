@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="406.29548"
+     inkscape:cx="408.29548"
      inkscape:cy="310.23201"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -389,17 +389,6 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:4.23333311px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="64.620438"
-       y="96.984283"
-       id="text75"><tspan
-         sodipodi:role="line"
-         id="tspan73"
-         x="64.620438"
-         y="96.984283"
-         style="font-size:4.23333311px;stroke-width:0.26458332">D?</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:4.23333311px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        x="88.673378"
        y="89.624107"
        id="text37"><tspan
@@ -408,5 +397,16 @@
          y="89.624107"
          style="font-size:4.23333311px;stroke-width:0.26458332"
          id="tspan39">A5 (A7 also works, but arduino uno and duemilanove do not bring it to a pin)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="63.750866"
+       y="97.143036"
+       id="text71-3"><tspan
+         sodipodi:role="line"
+         id="tspan69-6"
+         x="63.750866"
+         y="97.143036"
+         style="font-size:4.23333311px;stroke-width:0.26458332">D4</tspan></text>
   </g>
 </svg>
