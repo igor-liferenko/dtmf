@@ -95,10 +95,11 @@ else {
 
 @<Send disconnect signal to phone if timeout@>=
 if (UCSR0A & (1<<RXC0)) {
-  (void) UDR0; /* remove received data from buffer */
-  cli();
-  PORTD |= 1 << PD4;
-  _delay_ms(500);
-  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD4);
-  sei();
+  if (UDR0 == '!') {
+    cli();
+    PORTD |= 1 << PD4;
+    _delay_ms(500);
+    PORTD &= (unsigned char) ~ (unsigned char) (1 << PD4);
+    sei();
+  }
 }
