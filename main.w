@@ -94,7 +94,7 @@ else {
 @ Just poweroff/poweron base station via a relay - this will effectively switch off the phone.
 We check for \.! because it is connected to serial console of router directly in some cases
 and this character does not occur in output of bootloader and kernel boot log (login via console is
-disabled on such devices via /etc/inittab).
+disabled on such devices in /etc/inittab).
 
 NOTE: just using rx and tx from arduino which has
 usb-com built-in will not work because it seems random output from built-in usb-com converter
