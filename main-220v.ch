@@ -9,13 +9,13 @@ so the signal must be inverted.
 @z
 
 @x
-    PORTD |= 1 << PD4;
+  PORTD |= 1 << PD4;
 @y
-    PORTD &= (unsigned char) ~ (unsigned char) (1 << PD4);
+  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD4);
 @z
 
 @x
-    PORTD &= (unsigned char) ~ (unsigned char) (1 << PD4);
+  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD4);
 @y
-    PORTD |= 1 << PD4;
+  PORTD |= 1 << PD4;
 @z

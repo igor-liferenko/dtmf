@@ -92,24 +92,13 @@ else {
 }
 
 @ Just poweroff/poweron base station via a relay - this will effectively switch off the phone.
-We check for \.! because it is connected to serial console of router directly in some cases
-and this character does not occur in output of bootloader and kernel boot log (login via console is
-disabled on such devices in /etc/inittab).
-
-NOTE: just using rx and tx from arduino which has
-usb-com built-in will not work because it seems random output from built-in usb-com converter
-is generated during poweron, which sends
-something to bootloader menu, which prevents the device from booting.
-Solution: cut TX pin on usb-com converter (pin #1 on FT232 - did not check if it is relevant for
-other converters).
 
 @<Send disconnect signal to phone if timeout@>=
 if (UCSR0A & (1<<RXC0)) {
-  if (UDR0 == '!') {
-    cli();
-    PORTD |= 1 << PD4;
-    _delay_ms(500);
-    PORTD &= (unsigned char) ~ (unsigned char) (1 << PD4);
-    sei();
-  }
+  (void) UDR0; /* remove received data from buffer */
+  cli();
+  PORTD |= 1 << PD4;
+  _delay_ms(500);
+  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD4);
+  sei();
 }
