@@ -1,4 +1,4 @@
-MCU=$(shell if [ `whereami` = work ]; then echo atmega168; else echo atmega328p; fi)
+MCU=atmega328p
 
 all: main.hex
 
