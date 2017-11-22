@@ -4,8 +4,8 @@ so the signal must be inverted.
 @x
   DDRD |= 1 << PD4;
 @y
-  DDRD |= 1 << PD4;
   PORTD |= 1 << PD4;
+  DDRD |= 1 << PD4;
 @z
 
 @x
