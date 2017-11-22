@@ -44,9 +44,13 @@ THE SOFTWARE.
 int main()
 {
   char digit;
-  PORTC |= 1 << PC0 | 1 << PC1 | 1 << PC2 | 1 << PC3 | 1 << PC4 | 1 << PC5 | 1 << PC6;
-  PORTD |= 1 << PD0 | 1 << PD1 | 1 << PD2 | 1 << PD3 | 1 << PD5 | 1 << PD6 | 1 << PD7;
-  PORTB |= 1 << PB0 | 1 << PB1 | 1 << PB2 | 1 << PB3 | 1 << PB4 | 1 << PB6 | 1 << PB7;
+
+  @<Put all pins to pullup mode@>@; /* FIXME: if nothing will work, this means A5 used for
+    ADC must be set to 0 somehow */
+  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD3);
+  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD4);
+  PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
+
   DDRD |= 1 << PD4;
   DDRB |= 1 << PB5;
 
@@ -105,3 +109,10 @@ if (UCSR0A & (1<<RXC0)) {
   PORTD &= (unsigned char) ~ (unsigned char) (1 << PD4);
   sei();
 }
+
+@ To reduce power consumption.
+
+@<Put all pins to pullup mode@>=
+PORTC = 0xff;
+PORTD = 0xff;
+PORTB = 0xff;

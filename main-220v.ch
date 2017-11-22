@@ -2,10 +2,8 @@
 so the signal must be inverted.
 
 @x
-  DDRD |= 1 << PD4;
+  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD4);
 @y
-  PORTD |= 1 << PD4;
-  DDRD |= 1 << PD4;
 @z
 
 @x
