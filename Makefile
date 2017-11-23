@@ -1,4 +1,4 @@
-MCU=atmega328p
+MCU=$(shell if [ `whereami` = home ] || [ `whereami` = notebook ]; then echo atmega328p; else echo atmega168; fi)
 
 all: main.hex
 
