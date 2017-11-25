@@ -45,8 +45,7 @@ int main()
 {
   char digit;
 
-  @<Put all pins to pullup mode@>@; /* FIXME: if nothing will work, this means A5 used for
-    ADC must be set to 0 somehow */
+  @<Put all pins to pullup mode@>@;
   PORTD &= (unsigned char) ~ (unsigned char) (1 << PD3);
   PORTD &= (unsigned char) ~ (unsigned char) (1 << PD4);
   PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
