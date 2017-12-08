@@ -46,7 +46,7 @@ int main()
   char digit;
 
   @<Put all pins to pullup mode@>@;
-  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD5);
+  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD3);
   PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
 
   DDRB |= 1 << PB5;
@@ -83,7 +83,7 @@ which resets the base station. So, to avoid cases like this we need to disable a
 on-hook. We will use `\.{\%}' character for this.
 
 @<Indicate hook state change to the PC@>=
-if (PIND & 1 << PD5) {
+if (PIND & 1 << PD3) {
   if (flag == 1) cout('%');
   flag = 0;
   PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
