@@ -46,11 +46,12 @@ int main()
   char digit;
 
   @<Put all pins to pullup mode@>@;
-  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD3);
-  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD4);
+  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD5);
+  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD6);
+  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD7);
   PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
 
-  DDRD |= 1 << PD4;
+  DDRD |= 1 << PD6;
   DDRB |= 1 << PB5;
 
   uart_init();
@@ -81,12 +82,12 @@ Meanwhile, power on base station is restored and it goes to on-hook state. After
 timeout signal comes and base station is reset again - and everything repeats endlessly.
 
 This second case may happen when we reflash the AVR,
-because when it is reflashed PD4 (to which the relay is connected) is disabled for a short time,
+because when it is reflashed PD6 (to which the relay is connected) is disabled for a short time,
 which resets the base station. So, to avoid cases like this we need to disable alarm if phone is
 on-hook. We will use `\.{\%}' character for this.
 
 @<Indicate hook state change to the PC@>=
-if (PIND & 1 << PD3) {
+if (PIND & 1 << PD5) {
   if (flag == 1) cout('%');
   flag = 0;
   PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
@@ -100,14 +101,10 @@ else {
 @ Just poweroff/poweron base station via a relay - this will effectively switch off the phone.
 
 @<Send disconnect signal to phone if timeout@>=
-if (UCSR0A & (1<<RXC0)) {
-  (void) UDR0; /* remove received data from buffer */
-  cli();
-  PORTD |= 1 << PD4;
-  _delay_ms(500);
-  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD4);
-  sei();
-}
+if (PIND & 1 << PD7)
+  PORTD |= 1 << PD6;
+else
+  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD6);
 
 @ To reduce power consumption.
 
