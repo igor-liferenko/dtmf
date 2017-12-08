@@ -47,11 +47,8 @@ int main()
 
   @<Put all pins to pullup mode@>@;
   PORTD &= (unsigned char) ~ (unsigned char) (1 << PD5);
-  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD6);
-  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD7);
   PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
 
-  DDRD |= 1 << PD6;
   DDRB |= 1 << PB5;
 
   uart_init();
@@ -61,7 +58,6 @@ int main()
     digit = dtmf_digit();
     if (digit) cout(digit);
     @<Indicate hook state change to the PC@>;
-    @<Send disconnect signal to phone if timeout@>;
   }
 }
 
@@ -97,14 +93,6 @@ else {
   flag = 1;
   PORTB |= 1 << PB5;
 }
-
-@ Just poweroff/poweron base station via a relay - this will effectively switch off the phone.
-
-@<Send disconnect signal to phone if timeout@>=
-if (PIND & 1 << PD7)
-  PORTD |= 1 << PD6;
-else
-  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD6);
 
 @ To reduce power consumption.
 
