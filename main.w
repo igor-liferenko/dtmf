@@ -65,7 +65,7 @@ int main()
 
 @<Indicate hook state change to the PC@>=
 if (PIND & 1 << PD3) { /* off-line or base station is not powered
-                          (off-line is implied in this case) */
+                          (automatically causes off-line) */
   flag = 0;
   PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
 }
