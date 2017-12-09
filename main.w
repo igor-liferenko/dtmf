@@ -61,30 +61,10 @@ int main()
   }
 }
 
-@ For off-hook indication we will send `\.{@@}' character to PC. But it is not enough.
-
-When the phone was off-hook and base station was reset - it is OK because it is the same
-condition is in the line when base station is switched off and when the phose is off-hook.
-The effect is as if the phone just goes on-hook.
-I.e., the ADC value was low when phone was off-hook. Then came disconnect signal and the
-ADC value stayed the same. Then power was restored on base station and the ADC signal
-became high, and at the same time the phone was switched off (so that base station and
-phone are now in default state).
-
-But if the phone was on-hook and base station was reset - then the following happens:
-ADC becomes low as if the phone was off-hook. So, corresponding symbol is send to PC
-as if the phone was off-hook. The program on PC reacts on this, and starts the timeout alarm.
-Meanwhile, power on base station is restored and it goes to on-hook state. After a while
-timeout signal comes and base station is reset again - and everything repeats endlessly.
-
-This second case may happen when we reflash the AVR,
-because when it is reflashed PD6 (to which the relay is connected) is disabled for a short time,
-which resets the base station. So, to avoid cases like this we need to disable alarm if phone is
-on-hook. We will use `\.{\%}' character for this.
+@ For off-hook indication we will send `\.{@@}' character to PC.
 
 @<Indicate hook state change to the PC@>=
 if (PIND & 1 << PD3) {
-  if (flag == 1) cout('%');
   flag = 0;
   PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
 }
