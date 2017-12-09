@@ -53,7 +53,7 @@ int main()
 
   uart_init();
   dtmf_init();
-  int flag = 0;
+  int flag;
   while (1) {
     digit = dtmf_digit();
     if (digit) cout(digit);
@@ -64,11 +64,12 @@ int main()
 @ For off-hook indication we will send `\.{@@}' character to PC.
 
 @<Indicate hook state change to the PC@>=
-if (PIND & 1 << PD3) {
+if (PIND & 1 << PD3) { /* off-line or base station is not powered
+                          (off-line is implied in this case) */
   flag = 0;
   PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
 }
-else {
+else { /* on-line */
   if (flag == 0) cout('@@');
   flag = 1;
   PORTB |= 1 << PB5;
