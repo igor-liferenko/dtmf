@@ -20,15 +20,19 @@ int main()
   while (1) {
     digit = dtmf_digit();
     if (digit) cout(digit);
-    @<Put program on PC to initial state@>@;
+    @<Indicate...@>@;
   }
 }
 
-@ For off-hook indication we will send `\.{@@}' character to PC.
+@ For on-line indication we send `\.{@@}' character to PC---to put
+program on PC to initial state.
+For off-line indication we send `\.{\%}' character to PC---to disable
+power reset on base station after timeout.
 
-@<Put program...@>=
+@<Indicate line state change to the PC@>=
 if (PIND & 1 << PD3) { /* off-line or base station is not powered
                           (automatically causes off-line) */
+  if (PORTB & 1 << PB5) cout('%');
   PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
 }
 else { /* on-line */
