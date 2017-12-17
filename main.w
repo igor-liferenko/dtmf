@@ -1,4 +1,9 @@
-@ There are two boundaries: guaranteed zero and guaranteed one---threshold at which we can
+@ TODO: do as in scheme.svg and take on-line/off-line indication from base station's LED
+(check that it is not connected with phone line - otherwise use photo resistor).
+This will allow to use transformer to play audio from PC.
+Then remove the following paragraph.
+
+There are two boundaries: guaranteed zero and guaranteed one---threshold at which we can
 precisely determine current logical level. For 5v power supply these are 1.4 and 1.8
 volts respectively.
 
