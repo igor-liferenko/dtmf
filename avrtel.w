@@ -32,6 +32,7 @@ void main(void)
   sei(); /* turn on interrupts */
 
   while(1) {
+    @<Indicate...@>@;
     if (keydetect) {
       keydetect = 0;
       switch (PIND & 0xF0) {
@@ -100,3 +101,19 @@ UBRR0L = UBRRL_VALUE;
 #endif
 UCSR0B = (1<<TXEN0);
 UCSR0C = (1<<UCSZ01) | (1<<UCSZ00);
+
+@ For on-line indication we send `\.{@@}' character to PC---to put
+program on PC to initial state.
+For off-line indication we send `\.{\%}' character to PC---to disable
+power reset on base station after timeout.
+
+@<Indicate line state change to the PC@>=
+if (PIND & 1 << PD3) { /* off-line or base station is not powered
+                          (automatically causes off-line) */
+  if (PORTB & 1 << PB5) cout('%');
+  PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
+}
+else { /* on-line */
+  if ((PORTB & 1 << PB5) == 0) cout('@@');
+  PORTB |= 1 << PB5;
+}
