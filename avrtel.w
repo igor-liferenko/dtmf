@@ -24,6 +24,9 @@ void main(void)
   PORTD &= (unsigned char) ~ (unsigned char) (1 << PD6); /* 2 */
   PORTD &= (unsigned char) ~ (unsigned char) (1 << PD7); /* 1 */
 
+  PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
+  DDRB |= 1 << PB5;
+
   @<Initialize UART@>@;
 
   EICRA |= 1 << ISC01 | 1 << ISC00; /* set INT0 to trigger on rising edge */
@@ -110,10 +113,18 @@ power reset on base station after timeout.
 @<Indicate line state change to the PC@>=
 if (PIND & 1 << PD3) { /* off-line or base station is not powered
                           (automatically causes off-line) */
-  if (PORTB & 1 << PB5) cout('%');
+  if (PORTB & 1 << PB5) {
+      while (!(UCSR0A & 1 << UDRE0)) ; /* loop while the transmit buffer is not ready to receive
+                                          new data */
+      UDR0 = '%';
+  }
   PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
 }
 else { /* on-line */
-  if ((PORTB & 1 << PB5) == 0) cout('@@');
+  if ((PORTB & 1 << PB5) == 0) {
+      while (!(UCSR0A & 1 << UDRE0)) ; /* loop while the transmit buffer is not ready to receive
+                                          new data */
+      UDR0 = '@@';
+  }
   PORTB |= 1 << PB5;
 }
