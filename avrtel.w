@@ -10,7 +10,7 @@ volatile int keydetect = 0;
 
 ISR(INT0_vect)
 {
-        keydetect = 1;
+  keydetect = 1;
 }
 
 void main(void)
@@ -24,10 +24,10 @@ void main(void)
   PORTD &= (unsigned char) ~ (unsigned char) (1 << PD6); /* 2 */
   PORTD &= (unsigned char) ~ (unsigned char) (1 << PD7); /* 1 */
 
-  @<Initialize UART@>;
+  @<Initialize UART@>@;
 
-  EICRA |= (1 << ISC11);    // set INT0 to trigger on rising edge
-  EIMSK |= (1 << INT0);     // Turns on INT0
+  EICRA |= 1 << ISC01 | 1 << ISC00; /* set INT0 to trigger on rising edge */
+  EIMSK |= 1 << INT0; /* turn on INT0 */
 
   sei(); /* turn on interrupts */
 
