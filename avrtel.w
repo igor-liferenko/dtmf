@@ -24,6 +24,8 @@ void main(void)
   PORTD &= (unsigned char) ~ (unsigned char) (1 << PD6); /* 2 */
   PORTD &= (unsigned char) ~ (unsigned char) (1 << PD7); /* 1 */
 
+  PORTD |= 1 << PD3; /* set PD3 to pullup explicitly */
+
   PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
   DDRB |= 1 << PB5;
 
