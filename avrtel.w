@@ -110,6 +110,8 @@ program on PC to initial state.
 For off-line indication we send `\.{\%}' character to PC---to disable
 power reset on base station after timeout.
 
+See \.{test-AOT127A.w} to recall how it was tested.
+
 @<Indicate line state change to the PC@>=
 if (PIND & 1 << PD3) { /* off-line or base station is not powered
                           (automatically causes off-line) */
