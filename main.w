@@ -10,7 +10,7 @@ volts respectively.
 @c
 #include "main.h"
 
-int main()
+void main(void)
 {
   char digit;
 
