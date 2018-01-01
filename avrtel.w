@@ -13,6 +13,12 @@ ISR(INT1_vect)
   keydetect = 1;
 }
 
+@ The matter is that on poweron, the phone turns its led on and keeps it on for about a second,
+then turns it off,
+which makes parasitic `\.{\%}'/`\.{@@}' pair to be sent to PC. So detect if DTR went low
+(i.e., base station was powered on) and ignore first two |PD0| transitions.
+
+@c
 volatile int base_station_was_powered_on = 0;
 
 ISR(INT0_vect)
