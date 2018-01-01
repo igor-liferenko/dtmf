@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="272.18735"
-     inkscape:cy="361.16138"
+     inkscape:cx="273.1975"
+     inkscape:cy="300.55223"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -727,5 +727,23 @@
        d="m 67.997071,163.46707 6.415148,0.32794"
        id="path132"
        inkscape:connector-curvature="0" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.26458332;stroke-opacity:1"
+       id="rect131"
+       width="10.958051"
+       height="3.3408689"
+       x="54.522984"
+       y="235.79527" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.52777778px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
+       x="59.601105"
+       y="237.3989"
+       id="text135"><tspan
+         sodipodi:role="line"
+         id="tspan133"
+         x="59.601105"
+         y="237.3989"
+         style="stroke-width:0.26458332;font-size:3.52777778px;">?</tspan></text>
   </g>
 </svg>
