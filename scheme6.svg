@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.6"
-     inkscape:cx="244.60001"
-     inkscape:cy="353.15164"
+     inkscape:zoom="2.8"
+     inkscape:cx="327.8216"
+     inkscape:cy="306.77971"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -490,20 +490,225 @@
          y="211.43564"
          style="stroke-width:0.26458332">D3</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.25163957px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 72.282851,210.94594 3.712383,-16.0302"
+       style="fill:none;stroke:#000000;stroke-width:0.18120307px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 72.081461,210.95962 69.960016,196.41397"
        id="path89"
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:1.41111112px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="74.744789"
-       y="194.61571"
+       x="68.319191"
+       y="195.74963"
        id="text93"><tspan
          sodipodi:role="line"
          id="tspan91"
-         x="74.744789"
-         y="194.61571"
+         x="68.319191"
+         y="195.74963"
          style="stroke-width:0.26458332">DTR</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.26458332;stroke-opacity:1"
+       id="rect90"
+       width="9.7328863"
+       height="5.8586307"
+       x="68.602676"
+       y="184.1741" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.41111112px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="67.034271"
+       y="183.01723"
+       id="text95"><tspan
+         sodipodi:role="line"
+         id="tspan93"
+         x="67.034271"
+         y="183.01723"
+         style="stroke-width:0.26458332">TLP281</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 77.532364,210.06547 76.256697,189.65476"
+       id="path97"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 70.020089,193.34003 0.566963,-3.59078"
+       id="path99"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.41111112px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="69.925591"
+       y="189.18228"
+       id="text103"><tspan
+         sodipodi:role="line"
+         id="tspan101"
+         x="69.925591"
+         y="189.18228"
+         style="stroke-width:0.26458332">IN1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.41111112px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="74.650299"
+       y="189.27679"
+       id="text107"><tspan
+         sodipodi:role="line"
+         id="tspan105"
+         x="74.650299"
+         y="189.27679"
+         style="stroke-width:0.26458332">GND</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.26458332;stroke-opacity:1"
+       id="rect109"
+       width="18.898809"
+       height="10.205358"
+       x="81.07589"
+       y="170.0945" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.41111112px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="84.005211"
+       y="173.87425"
+       id="text113"><tspan
+         sodipodi:role="line"
+         id="tspan111"
+         x="84.005211"
+         y="173.87425"
+         style="stroke-width:0.26458332">base station</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 82.398808,178.40996 -11.528274,6.70908"
+       id="path115"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.41111112px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="69.16964"
+       y="186.34747"
+       id="text119"><tspan
+         sodipodi:role="line"
+         id="tspan117"
+         x="69.16964"
+         y="186.34747"
+         style="stroke-width:0.26458332">OUT1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.93888903px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="83.036644"
+       y="179.4494"
+       id="text123"><tspan
+         sodipodi:role="line"
+         id="tspan121"
+         x="83.036644"
+         y="179.4494"
+         style="font-size:4.93888903px;stroke-width:0.26458332">-</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.41111112px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="73.69957"
+       y="186.2836"
+       id="text127"><tspan
+         sodipodi:role="line"
+         id="tspan125"
+         x="73.69957"
+         y="186.2836"
+         style="stroke-width:0.26458332">HVCC</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 76.104998,185.61542 14.098465,-6.48128"
+       id="path129"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="90.997772"
+       y="179.44942"
+       id="text137"><tspan
+         sodipodi:role="line"
+         id="tspan135"
+         x="90.997772"
+         y="179.44942"
+         style="font-size:3.52777767px;stroke-width:0.26458332">+</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 83.438242,182.28422 2.740329,3.11831"
+       id="path139"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.29014209px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 76.918153,187.3869 h 8.976936"
+       id="path141"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.41111112px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="73.516373"
+       y="187.67038"
+       id="text145"><tspan
+         sodipodi:role="line"
+         id="tspan143"
+         x="73.516373"
+         y="187.67038"
+         style="stroke-width:0.26458332">HGND</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.36875021;stroke-opacity:1"
+       id="rect147"
+       width="13.313988"
+       height="4.8095236"
+       x="86.136162"
+       y="184.69865" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.41111112px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="88.497032"
+       y="186.94882"
+       id="text151"><tspan
+         sodipodi:role="line"
+         id="tspan149"
+         x="88.497032"
+         y="186.94882"
+         style="stroke-width:0.26458332">POWER SUPPLY</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.41111112px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="86.696411"
+       y="186.0874"
+       id="text155"><tspan
+         sodipodi:role="line"
+         id="tspan153"
+         x="86.696411"
+         y="186.0874"
+         style="stroke-width:0.26458332">+</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="86.946114"
+       y="188.50526"
+       id="text163"><tspan
+         sodipodi:role="line"
+         id="tspan161"
+         x="86.946114"
+         y="188.50526"
+         style="font-size:3.52777767px;stroke-width:0.26458332">-</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.93888903px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="70.303566"
+       y="203.63989"
+       id="text167"><tspan
+         sodipodi:role="line"
+         id="tspan165"
+         x="70.303566"
+         y="203.63989"
+         style="font-size:4.93888903px;stroke-width:0.26458332">*</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.11666667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
+       x="46.302082"
+       y="248.14658"
+       id="text171"><tspan
+         sodipodi:role="line"
+         id="tspan169"
+         x="46.302082"
+         y="248.14658"
+         style="stroke-width:0.26458332;font-size:2.11666667px;">* - for some models of base stations (where led is on/off on poweron)</tspan></text>
   </g>
 </svg>
