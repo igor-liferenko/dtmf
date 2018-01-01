@@ -8,14 +8,14 @@
 
 volatile int keydetect = 0;
 
-ISR(INT0_vect)
+ISR(INT1_vect)
 {
   keydetect = 1;
 }
 
 volatile int base_station_was_powered_on = 0;
 
-ISR(INT1_vect)
+ISR(INT0_vect)
 {
   base_station_was_powered_on = 1;
 }
@@ -30,9 +30,9 @@ void main(void)
 
   @<Initialize UART@>@;
 
-  EICRA |= 1 << ISC01 | 1 << ISC00; /* set INT0 to trigger on rising edge */
+  EICRA |= 1 << ISC01; /* set INT0 to trigger on falling edge */
   EIMSK |= 1 << INT0; /* turn on INT0 */
-  EICRA |= 1 << ISC11; /* set INT1 to trigger on falling edge */
+  EICRA |= 1 << ISC11 | 1 << ISC10; /* set INT1 to trigger on rising edge */
   EIMSK |= 1 << INT1; /* turn on INT1 */
 
   sei(); /* turn on interrupts */
