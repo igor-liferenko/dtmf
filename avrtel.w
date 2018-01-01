@@ -13,26 +13,27 @@ ISR(INT0_vect)
   keydetect = 1;
 }
 
+volatile int base_station_was_powered_on = 0;
+
+ISR(INT1_vect)
+{
+  base_station_was_powered_on = 1;
+}
+
 void main(void)
 {
   unsigned char digit;
 
-  @<Put all pins to pullup mode@>@;
-  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD2); /* STQ */
-  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD4); /* 4 */
-  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD5); /* 3 */
-  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD6); /* 2 */
-  PORTD &= (unsigned char) ~ (unsigned char) (1 << PD7); /* 1 */
+  PORTD |= 1 << PD0; /* set PD0 to pullup mode */
 
-  PORTD |= 1 << PD3; /* set PD3 to pullup explicitly */
-
-  PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
   DDRB |= 1 << PB5;
 
   @<Initialize UART@>@;
 
   EICRA |= 1 << ISC01 | 1 << ISC00; /* set INT0 to trigger on rising edge */
   EIMSK |= 1 << INT0; /* turn on INT0 */
+  EICRA |= 1 << ISC11; /* set INT1 to trigger on falling edge */
+  EIMSK |= 1 << INT1; /* turn on INT1 */
 
   sei(); /* turn on interrupts */
 
@@ -88,13 +89,6 @@ void main(void)
   }
 }
 
-@ To reduce power consumption.
-
-@<Put all pins to pullup mode@>=
-PORTC = 0xff;
-PORTD = 0xff;
-PORTB = 0xff;
-
 @ @d BAUD 57600
 
 @<Initialize UART@>=
@@ -115,20 +109,25 @@ power reset on base station after timeout.
 See \.{test-AOT127A.w} to recall how it was tested.
 
 @<Indicate line state change to the PC@>=
-if (PIND & 1 << PD3) { /* off-line or base station is not powered
+if (PIND & 1 << PD0) { /* off-line or base station is not powered
                           (automatically causes off-line) */
   if (PORTB & 1 << PB5) {
+    if (base_station_was_powered_on) base_station_was_powered_on = 0;
+    else {      
       while (!(UCSR0A & 1 << UDRE0)) ; /* loop while the transmit buffer is not ready to receive
                                           new data */
       UDR0 = '%';
+    }
   }
   PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
 }
 else { /* on-line */
   if ((PORTB & 1 << PB5) == 0) {
+    if (base_station_was_powered_on) ; else {
       while (!(UCSR0A & 1 << UDRE0)) ; /* loop while the transmit buffer is not ready to receive
                                           new data */
       UDR0 = '@@';
+    }
   }
   PORTB |= 1 << PB5;
 }
