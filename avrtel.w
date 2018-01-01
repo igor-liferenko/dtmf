@@ -113,7 +113,7 @@ if (PIND & 1 << PD0) { /* off-line or base station is not powered
                           (automatically causes off-line) */
   if (PORTB & 1 << PB5) {
     if (base_station_was_powered_on) base_station_was_powered_on = 0;
-    else {      
+    else {
       while (!(UCSR0A & 1 << UDRE0)) ; /* loop while the transmit buffer is not ready to receive
                                           new data */
       UDR0 = '%';
