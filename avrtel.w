@@ -128,9 +128,9 @@ if (PIND & 1 << PD0) { /* off-line or base station is not powered
                                           new data */
       UDR0 = '%';
       PORTB &= (unsigned char) ~ (unsigned char) (1 << PB5);
-      on_line = 0;
     }
   }
+  on_line = 0;
 }
 else { /* on-line */
   if (!on_line) { /* transition happened */
@@ -139,7 +139,7 @@ else { /* on-line */
                                           new data */
       UDR0 = '@@';
       PORTB |= 1 << PB5;
-      on_line = 1;
     }
   }
+  on_line = 1;
 }
