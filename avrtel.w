@@ -1,4 +1,5 @@
 @ This program is for MT8870.
+TODO: move base_station_was_powered_on + on_line stuff to change-file
 
 @d F_CPU 16000000UL
 
