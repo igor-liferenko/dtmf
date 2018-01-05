@@ -1,4 +1,4 @@
-MCU=$(shell if [ `whereami` = home ] || [ `whereami` = notebook ]; then echo atmega328p; else echo atmega168; fi)
+MCU=atmega328p
 
 CC = avr-gcc
 CFLAGS = -Os -Wall -g3 -mmcu=$(MCU) -DF_CPU=16000000UL -fpack-struct
