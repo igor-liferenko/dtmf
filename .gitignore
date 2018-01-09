@@ -4,4 +4,3 @@ main.c
 hook.c
 *.o
 relay.eps
-avrtel.c
